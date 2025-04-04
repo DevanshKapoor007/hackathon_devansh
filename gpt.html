@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Document Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        .file-input {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            text-align: left;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Legal Document Analyzer</h1>
+        <input type="file" id="fileInput" class="file-input">
+        <button onclick="analyzeDocument()">Analyze</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function analyzeDocument() {
+            const fileInput = document.getElementById('fileInput');
+            const output = document.getElementById('output');
+
+            if (!fileInput.files.length) {
+                output.innerHTML = "<p style='color: red;'>Please upload a document.</p>";
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            
+            reader.onload = function(event) {
+                const text = event.target.result;
+                output.innerHTML = `<pre>${text}</pre>`;
+            };
+
+            reader.readAsText(file);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 transition-all duration-300">
+    <header class="flex justify-between items-center p-6 bg-gray-100 dark:bg-gray-900 dark:text-white">
+        <h1 class="text-2xl font-bold">Brand</h1>
+        <i id="theme-toggle" class="fas fa-moon text-2xl cursor-pointer"></i>
+    </header>
+    
+    <section class="text-center py-20 px-6">
+        <h2 class="text-4xl font-bold">Welcome to Our Landing Page</h2>
+        <p class="mt-4 text-gray-600 dark:text-gray-300">A modern and responsive template with dark mode.</p>
+        <a href="#features" class="mt-6 inline-block px-6 py-3 text-white bg-blue-600 rounded-lg">Get Started</a>
+    </section>
+    
+    <section id="features" class="py-16 px-6 bg-gray-100 dark:bg-gray-800 dark:text-white">
+        <h2 class="text-3xl font-bold text-center">Features</h2>
+        <div class="flex flex-wrap justify-center mt-6 gap-6">
+            <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md w-64 text-center">
+                <i class="fas fa-bolt text-4xl text-blue-500"></i>
+                <h3 class="text-xl font-semibold mt-4">Fast Performance</h3>
+            </div>
+            <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md w-64 text-center">
+                <i class="fas fa-shield-alt text-4xl text-green-500"></i>
+                <h3 class="text-xl font-semibold mt-4">Secure & Reliable</h3>
+            </div>
+            <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md w-64 text-center">
+                <i class="fas fa-mobile-alt text-4xl text-purple-500"></i>
+                <h3 class="text-xl font-semibold mt-4">Mobile Friendly</h3>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="text-center p-6 bg-gray-200 dark:bg-gray-900 dark:text-white">
+        <p>&copy; 2025 Brand. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            toggleButton.classList.toggle('fa-moon');
+            toggleButton.classList.toggle('fa-sun');
+        });
+    </script>
+</body>
+</html>

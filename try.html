@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LegalAI Analyzer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --primary: #1a237e;
+      --secondary: #3949ab;
+      --bg: #f4f6f8;
+      --text: #333;
+      --card-bg: white;
+    }
+    [data-theme="dark"] {
+      --primary: #0d1117;
+      --secondary: #161b22;
+      --bg: #0d1117;
+      --text: #c9d1d9;
+      --card-bg: #161b22;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    nav {
+      background-color: var(--primary);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav h1 {
+      font-size: 1.8rem;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #c5cae9;
+    }
+    .toggle-btn {
+      background: none;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      padding: 0.3rem 0.7rem;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    header h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      header h2 {
+        font-size: 2.2rem;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>LexShield</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#analyze">Analyze</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="toggle-btn" onclick="toggleTheme()">Dark Mode <i id="theme-toggle" class="fas fa-moon toggle-btn"></i></button>
+  </nav>
+
+  <header>
+    <h2>"Analyze, Detect, Protect - The future of legal Tech"</h2>
+    <p>AI-driven insights to analyze, summarize, and validate contracts faster and smarter than ever before.</p>
+  </header>
+
+  <section id="analyze">
+    <h3>Analyze Your Contracts</h3>
+    <div class="card-grid">
+      <div class="card">
+        <h4>Summarization</h4>
+        <p>Extract key clauses and obligations using advanced NLP techniques.</p>
+      </div>
+      <div class="card">
+        <h4>Fraud Detection</h4>
+        <p>AI flags risky or inconsistent clauses through anomaly detection.</p>
+      </div>
+      <div class="card">
+        <h4>Named Entity Recognition</h4>
+        <p>Automatically identify names, dates, and obligations from your documents.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="security">
+    <h3>Top-Tier Security</h3>
+    <p>Data is securely encrypted and handled with enterprise-grade protocols. Optional blockchain integration ensures document authenticity and transparency.</p>
+  </section>
+
+  <section id="contact">
+    <h3>Contact Us</h3>
+    <p>Email: <a href="mailto:support@legalai.com">support@legalai.com</a></p>
+    <p>Phone: +123 456 7890</p>
+  </section>
+
+  <footer>
+    &copy; 2025 LegalAI. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const button = document.querySelector(".toggle-btn");
+      if (currentTheme === "dark") {
+        document.documentElement.removeAttribute("data-theme");
+        button.textContent = "Dark Mode";
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        button.textContent = "Light Mode";
+      }
+    }
+  </script>
+</body>
+</html>
